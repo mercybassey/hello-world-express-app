@@ -15,7 +15,7 @@ jobs:
       
       - name: Build and Push the Image to GHCR
         run: |
-          docker login -u mercybassey --password-standin ${{ secrets.GH_ACCESS_TOKEN}}
+          docker login -u mercybassey --password-stdin ${{ secrets.PERSONAL_ACCESS_TOKEN}}
           docker build . -tag ghcr.io/mercybassey/hello-world:latest
           docker push ghcr.io/mercybassey/hello-world:latest    
 
